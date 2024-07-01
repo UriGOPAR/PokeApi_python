@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+h1 {
+    font-size: 3em;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    border: 1px solid #000;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.fire {
+    background-color: red;
+    color: white;
+    
+}
+
+.water {
+    background-color: blue;
+    color: white;
+}
+
+.electric {
+    background-color: yellow;
+    color: black;
+}
+
+.plant {
+    background-color: green;
+    color: black;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-column, .right-column {
+    width: 45%;
+}
+
+.damage-section, .evolves-section, .type-section, .stats-section, .abilities-section {
+    margin-bottom: 20px;
+}
+
+
+h3 {
+    margin-top: 10px;
+}
+
+.damage-section ul, .evolves-section ul, .type-section ul, .stats-section ul, .abilities-section ul {
+    padding: 10px;
+    border-radius: 5px;
+}

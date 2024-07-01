@@ -4,81 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charmander</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            background: #f0f0f0;
-            margin: 5px;
-            padding: 10px;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="static/CSS/pokemon_template.css">
 </head>
-<body>
+<body class="fire">
     <h1>Charmander</h1>
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander">
-    <h2>Stats:</h2>
-    <ul>
-        <li><strong>HP:</strong> 39</li>
-        <li><strong>Attack:</strong> 52</li>
-        <li><strong>Defense:</strong> 43</li>
-        <li><strong>Base Experience:</strong> 62</li>
-    </ul>
-    <h2>Abilities:</h2>
-    <ul>
-        
-        <li>
-            <strong>blaze</strong>: When this Pokémon has 1/3 or less of its HP remaining, its fire-type moves inflict 1.5× as much regular damage.
-        </li>
-        
-        <li>
-            <strong>solar-power</strong>: During strong sunlight, this Pokémon has 1.5× its Special Attack but takes 1/8 of its maximum HP in damage after each turn.
-        </li>
-        
-    </ul>
-    <h2>Evolutions:</h2>
-    <ul>
-        
-        <li>charmander</li>
-        
-        <li>charmeleon</li>
-        
-        <li>charizard</li>
-        
-    </ul>
-    <h2>Type Info:</h2>
-    <h3>Double Damage From:</h3>
-    <ul>
-        
-        <li>ground</li>
-        
-        <li>rock</li>
-        
-        <li>water</li>
-        
-    </ul>
-    <h3>Double Damage To:</h3>
-    <ul>
-        
-        <li>bug</li>
-        
-        <li>steel</li>
-        
-        <li>grass</li>
-        
-        <li>ice</li>
-        
-    </ul>
+    <div class="container">
+        <div class="left-column">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander">
+            <div class="type-section">
+                <h2>Pokemon type:</h2>
+                <ul>
+                    
+                    <li>fire</li>
+                    
+                </ul>
+            </div>
+            <div class="damage-section">
+                <h3>Double damage from</h3>
+                <ul>
+                    
+                    <li>water</li>
+                    
+                    <li>ground</li>
+                    
+                    <li>rock</li>
+                    
+                </ul>
+                <h3>Double damage to</h3>
+                <ul>
+                    
+                    <li>steel</li>
+                    
+                    <li>bug</li>
+                    
+                    <li>ice</li>
+                    
+                    <li>grass</li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="evolves-section">
+                <h2>Evolves to:</h2>
+                <ul>
+                    
+                    <li>charmeleon</li>
+                    
+                    <li>charizard</li>
+                    
+                </ul>
+            </div>
+            <div class="stats-section">
+                <h2>Stats:</h2>
+                <ul>
+                    <li><strong>HP:</strong> 39</li>
+                    <li><strong>Attack:</strong> 52</li>
+                    <li><strong>Defense:</strong> 43</li>
+                    <li><strong>Base Experience:</strong> 62</li>
+                </ul>
+            </div>
+            <div class="abilities-section">
+                <h2>Pokemon abilities:</h2>
+                <ul>
+                    
+                    <li>
+                        <strong>blaze</strong>: When this Pokémon has 1/3 or less of its HP remaining, its fire-type moves inflict 1.5× as much regular damage.
+                    </li>
+                    
+                    <li>
+                        <strong>solar-power</strong>: During strong sunlight, this Pokémon has 1.5× its Special Attack but takes 1/8 of its maximum HP in damage after each turn.
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

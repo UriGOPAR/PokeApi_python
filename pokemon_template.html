@@ -4,63 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ pokemon_name }}</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            background: #f0f0f0;
-            margin: 5px;
-            padding: 10px;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="static/CSS/pokemon_template.css">
 </head>
-<body>
+<body class="{% if 'fire' in types %}fire{% elif 'water' in types %}water{% elif 'electric' in types %}electric{% elif 'grass' in types %}plant{% endif %}">
     <h1>{{ pokemon_name }}</h1>
-    <img src="{{ image_url }}" alt="{{ pokemon_name }}">
-    <h2>Stats:</h2>
-    <ul>
-        <li><strong>HP:</strong> {{ hp }}</li>
-        <li><strong>Attack:</strong> {{ attack }}</li>
-        <li><strong>Defense:</strong> {{ defense }}</li>
-        <li><strong>Base Experience:</strong> {{ base_experience }}</li>
-    </ul>
-    <h2>Abilities:</h2>
-    <ul>
-        {% for ability in pokemon_abilities %}
-        <li>
-            <strong>{{ ability.name }}</strong>: {{ ability.effect }}
-        </li>
-        {% endfor %}
-    </ul>
-    <h2>Evolutions:</h2>
-    <ul>
-        {% for evolution in evolutions %}
-        <li>{{ evolution }}</li>
-        {% endfor %}
-    </ul>
-    <h2>Type Info:</h2>
-    <h3>Double Damage From:</h3>
-    <ul>
-        {% for damage in double_damage_from %}
-        <li>{{ damage }}</li>
-        {% endfor %}
-    </ul>
-    <h3>Double Damage To:</h3>
-    <ul>
-        {% for damage in double_damage_to %}
-        <li>{{ damage }}</li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <div class="left-column">
+            <img src="{{ image_url }}" alt="{{ pokemon_name }}">
+            <div class="type-section">
+                <h2>Pokemon type:</h2>
+                <ul>
+                    {% for type in types %}
+                    <li>{{ type }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="damage-section">
+                <h3>Double damage from</h3>
+                <ul>
+                    {% for damage in double_damage_from %}
+                    <li>{{ damage }}</li>
+                    {% endfor %}
+                </ul>
+                <h3>Double damage to</h3>
+                <ul>
+                    {% for damage in double_damage_to %}
+                    <li>{{ damage }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="evolves-section">
+                <h2>Evolves to:</h2>
+                <ul>
+                    {% for evolution in evolutions %}
+                    <li>{{ evolution }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="stats-section">
+                <h2>Stats:</h2>
+                <ul>
+                    <li><strong>HP:</strong> {{ hp }}</li>
+                    <li><strong>Attack:</strong> {{ attack }}</li>
+                    <li><strong>Defense:</strong> {{ defense }}</li>
+                    <li><strong>Base Experience:</strong> {{ base_experience }}</li>
+                </ul>
+            </div>
+            <div class="abilities-section">
+                <h2>Pokemon abilities:</h2>
+                <ul>
+                    {% for ability in pokemon_abilities %}
+                    <li>
+                        <strong>{{ ability.name }}</strong>: {{ ability.effect }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

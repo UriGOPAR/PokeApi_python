@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose a Pokémon</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/pokedex.css') }}">
+    <meta charset="UTF-8">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="static/CSS/pokedex.css">
 </head>
 <body>
     <h1>Whos that Pokemon?</h1>
     <form action="/get_pokemon" method="post" class="pokedex-container">
         <button type="submit" name="choice" value="1" class="pokemon-card">
-            <img src="https://images.vexels.com/content/156928/preview/question-mark-square-icon-e971e7.png" alt="pichu">
+            <img src="https://images.vexels.com/content/156928/preview/question-mark-square-icon-e971e7.png" alt="1">
             <span>1</span>
         </button>
         <button type="submit" name="choice" value="2" class="pokemon-card">
