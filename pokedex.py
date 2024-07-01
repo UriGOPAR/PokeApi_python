@@ -11,6 +11,10 @@ import os
 
 app = Flask(__name__)
 
+OUTPUT_DIR = 'outputs'
+if not os.path.exists(OUTPUT_DIR):
+    os.makedirs(OUTPUT_DIR)
+
 @app.route('/')
 def index():
     return render_template_string(open('pokedex.html').read())
@@ -19,8 +23,8 @@ def get_ability_effects(ability_url):
     response = requests.get(ability_url)
     ability_data = response.json()
     effect_entries = ability_data['effect_entries']
-    effect_in_english = next(entry['effect'] for entry in effect_entries if entry['language']['name'] == 'en')
-    return effect_in_english
+    effect = next(entry['effect'] for entry in effect_entries if entry['language']['name'] == 'en')
+    return effect
 
 def get_evolution_chain(evolution_url):
     response = requests.get(evolution_url)
@@ -100,7 +104,7 @@ def get_pokemon():
         template = file.read()
 
     html_content = render_template_string(template, **pokemon_data)
-    filename = f"{pokemon_data['pokemon_name']}.html"
+    filename = os.path.join(OUTPUT_DIR, f"{pokemon_data['pokemon_name']}.html")
     with open(filename, 'w') as file:
         file.write(html_content)
 
