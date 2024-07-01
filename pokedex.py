@@ -26,7 +26,7 @@ def get_ability_effects(ability_url):
     effect = next(entry['effect'] for entry in effect_entries if entry['language']['name'] == 'en')
     return effect
 
-def get_evolution_chain(evolution_url):
+def get_evolution(evolution_url):
     response = requests.get(evolution_url)
     evolution_data = response.json()
     chain = evolution_data['chain']
@@ -60,8 +60,8 @@ def get_pokemon_data(pokemon_url):
     species_url = pokemon_data['species']['url']
     species_response = requests.get(species_url)
     species_data = species_response.json()
-    evolution_chain_url = species_data['evolution_chain']['url']
-    evolutions = get_evolution_chain(evolution_chain_url)
+    evolution_chain= species_data['evolution_chain']['url']
+    evolutions = get_evolution(evolution_chain)
 
     types = [t['type']['name'] for t in pokemon_data['types']]
     type_urls = [t['type']['url'] for t in pokemon_data['types']]
