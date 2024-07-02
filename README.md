@@ -21,7 +21,7 @@ En este repositorio conecte la API PokeApi en Python. El usuario puede elegir un
     ```bash
     ctrl+c
 
-## Librerrías Utilizadas
+## Librerías Utilizadas
 - Flask
 - Requests
 - webbrowser
