@@ -20,6 +20,13 @@ En este repositorio conecte la API PokeApi en Python. El usuario puede elegir un
 7. **Para detener el este programa en tu terminal teclear**
     ```bash
     ctrl+c
+
+## Librerrías Utilizadas
+- Flask
+- Requests
+- webbrowser
+- threading
+- os
 ## Estructura de este proyecto
 - `pokedex.py`: Script principal que ejecuta el programa.
 - `outputs/`: Directorio donde se guardan los archivos HTML generados.
